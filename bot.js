@@ -7,7 +7,7 @@ const getYoutubeID = require('get-youtube-id');
 const fetchVideoInfo = require('youtube-info');
 
 const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4";
-const prefix = '-';
+const prefix = '4';
 client.login(process.env.BOT_TOKEN);  //اياكككك تلعب هنا لا تحط توكنك هنا
 client.on('ready', () => {
     console.log('I am ready!');
@@ -252,8 +252,7 @@ function isYoutube(str) {
 
      prefix = ${prefix}
      ping = ${Date.now() - message.createdTimestamp}ms
-     for help = <!Nadim. | SY#6666>
-     By !Nadim. | SY   `)
+     By REX   `)
 
       message.channel.send({embed});
      }
