@@ -146,7 +146,7 @@ client.on('message', function(message) {
         var server = server = servers[message.guild.id];
         if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
     }
-    else if (mess.startsWith(prefix + 'تعال')) {
+    else if (mess.startsWith(prefix + 'join')) {
         if (!message.member.voiceChannel) return message.channel.send(':no_entry: || **__يجب ان تكون في روم صوتي__**');
         message.member.voiceChannel.join().then(message.channel.send(':ok:'));
     }
@@ -238,19 +238,19 @@ function isYoutube(str) {
     const embed = new Discord.RichEmbed()
      .setColor("RANDOM")
      .addField(`**__أوامر البوت__**`,`
-.    **${prefix}تعال**
+.    **${prefix}join**
      عشان يدخل البوت الروم
-     **${prefix}شغل**
+     **${prefix}play**
      امر تشغيل الأغنية , !شغل الرابط او اسم الأعنية
-     **${prefix}تخطي**
+     **${prefix}skip**
      تغير الأغنية
-     **${prefix}وقف**
+     **${prefix}stop**
      ايقاف الأغنية
-     **${prefix}كمل**
+     **${prefix}pause**
      مواصلة الأغنية
-     **${prefix}صوت**
+     **${prefix}vol**
      مستوى الصوت 1-100
-     **${prefix}اطلع**
+     **${prefix}ok**
      خروج البوت من الروم
 
 
@@ -262,7 +262,7 @@ function isYoutube(str) {
      }
     });
 client.on('message', message => {
-    if (message.content === 'zg') {
+    if (message.content === 'ping') {
         message.reply('pong');
       }
 });
