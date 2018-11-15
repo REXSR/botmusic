@@ -233,39 +233,84 @@ function search_video(query, cb) {
 function isYoutube(str) {
     return str.toLowerCase().indexOf('youtube.com') > -1;
 }
- client.on('message', message => {
-     if (message.content === prefix +"help") {
-    const embed = new Discord.RichEmbed()
-     .setColor("RANDOM")
-     .addField(`**__أوامر البوت__**`,`
-.    **${prefix}tjoin**
-     عشان يدخل البوت الروم
-     **${prefix}tplay**
-     امر تشغيل الأغنية , !شغل الرابط او اسم الأعنية
-     **${prefix}tskip**
-     تغير الأغنية
-     **${prefix}tstop**
-     ايقاف الأغنية
-     **${prefix}tpause**
-     مواصلة الأغنية
-     **${prefix}tvol**
-     مستوى الصوت 1-100
-     **${prefix}ok**
-     خروج البوت من الروم
+ const adminprefix = "vip"; 
+const devs = ['456746960515366923']; 
+client.on('message', message => { 
+  var argresult = message.content.split(` `).slice(1).join(' '); 
+    if (!devs.includes(message.author.id)) return; 
+    
+if (message.content.startsWith(adminprefix + 'setgame')) { 
+  client.user.setGame(argresult);
+    message.channel.sendMessage(`**${argresult} تم تغيير بلاينق البوت إلى **`)
+} else 
+  if (message.content.startsWith(adminprefix + 'setname')) {
+client.user.setUsername(argresult).then
+    message.channel.sendMessage(`**${argresult}** : تم تغيير أسم البوت إلى`)
+return message.reply("**لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . **");
+} else
+  if (message.content.startsWith(adminprefix + 'setavatar')) {
+client.user.setAvatar(argresult);
+  message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
+      } else     
+if (message.content.startsWith(adminprefix + 'setT')) {
+  client.user.setGame(argresult, "https://www.twitch.tv/idk");
+    message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`)
+}
 
-
-     prefix = ${prefix}
-     ping = ${Date.now() - message.createdTimestamp}ms
-     By REX   `)
-
-      message.channel.send({embed});
-     }
-    });
-client.on('message', message => {
-    if (message.content === 'ping') {
-        message.reply('pong');
-      }
 });
+
+
+ client.on('message', message => {
+  if (message.author.bot) return;
+   if (message.content === prefix + "help") {
+      message.react("☑")            
+
+   
+      message.author.sendMessage(`**شكرا لك لاستعمال البوت**
+╔[❖═════════════════════════════❖]╗
+❖${prefix}**play** ==>**لي تشغيل الموسيقى**
+❖${prefix}**stop** ==>**لي ايقاف الموسيقى**
+❖${prefix}**skip** ==>**لي تغير الموسيقى**
+❖${prefix}**pause** ==>**لي ايقاف الموسيقى مؤقتا**
+❖${prefix}**np** ==>**لي تكملت الموسيقى**
+❖${prefix}**vol** ==>**لي التحكم بالصوت**
+__وشكرا__
+╚[❖═════════════════════════════❖]╝
+`);
+
+}
+});
+
+
+client.on('message', message =>{
+
+    if(message.content === '3ping'){
+
+let start = Date.now(); message.channel.send('pong').then(message => { 
+
+message.edit(`\`\`\`js
+Time taken: ${Date.now() - start} ms
+Discord API: ${client.ping.toFixed(0)} ms\`\`\``);
+
+    });
+
+    }
+
+});
+
+
+client.on('ready',async () => {
+
+  client.channels.find(ch => ch.id === "495002982593855489" && ch.type === 'voice').join();
+
+});
+
+// طبعا عشان الكود يشتغل بكفاءة لازم يكون البوت مفتوح 24 ساعة
+
+// البوت بيخرج برا الروم اذا الخادم قفل
+
+// جميع الحقوق محفوظة لسيرفر كودز
+
 
 
 
