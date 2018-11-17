@@ -12,7 +12,7 @@ client.on('ready', () => {
     console.log('I am ready!');
 });
 client.on('ready', () => {
-  client.user.setGame('3play.','https://www.twitch.tv/peery13');
+  client.user.setGame('nawa.','https://www.twitch.tv/peery13');
 });
 client.on('ready', function() {
     console.log(`i am ready ${client.user.username}`);
