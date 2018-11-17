@@ -6,13 +6,14 @@ const fs = require('fs');
 const getYoutubeID = require('get-youtube-id');
 const fetchVideoInfo = require('youtube-info');
 const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4";
-const prefix = '3';
+const prefix = 'Na';
+var prefix = 'nA';
 client.login(process.env.BOT_TOKEN);  //اياكككك تلعب هنا لا تحط توكنك هنا
 client.on('ready', () => {
     console.log('I am ready!');
 });
 client.on('ready', () => {
-  client.user.setGame('nawa.','https://www.twitch.tv/peery13');
+  client.user.setGame('nawaf Power.','https://www.twitch.tv/peery13');
 });
 client.on('ready', function() {
     console.log(`i am ready ${client.user.username}`);
@@ -233,8 +234,8 @@ function search_video(query, cb) {
 function isYoutube(str) {
     return str.toLowerCase().indexOf('youtube.com') > -1;
 }
- const adminprefix = "vip"; 
-const devs = ['456746960515366923']; 
+ const adminprefix = "+"; 
+const devs = ['283355378811666435']; 
 client.on('message', message => { 
   var argresult = message.content.split(` `).slice(1).join(' '); 
     if (!devs.includes(message.author.id)) return; 
@@ -284,7 +285,7 @@ __وشكرا__
 
 client.on('message', message =>{
 
-    if(message.content === '3ping'){
+    if(message.content === 'Naping'){
 
 let start = Date.now(); message.channel.send('pong').then(message => { 
 
